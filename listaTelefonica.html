@@ -1,0 +1,55 @@
+<html ng-app="listaTelefonica">
+	<head>
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8" ></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<style type="text/css" media="screen">
+			.jumbotron {
+				width: 400px;
+				text-align: center;
+				margin-top: 20px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.table {
+				
+			}
+		</style>
+		<script>
+			angular.module('listaTelefonica', []);
+			angular.module('listaTelefonica').controller('listaTelefonicaCtrl', function($scope){
+				$scope.app = "Lista Telefonica";
+				$scope.contatos = [
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"},
+					{nome: "Pedro", telefone: "615165416516"}
+				]
+			});
+			
+		</script>
+	</head>
+	<body ng-controller="listaTelefonicaCtrl">
+		<div class="jumbotron">
+			<h3>{{ app }}</h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Telefone</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contato in contatos">
+						<td>{{ contato.nome }}</td>
+						<td>{{ contato.telefone }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
